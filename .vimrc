@@ -1,31 +1,6 @@
-" vimrc, R.Wobst, 6.12.2003
+" Get the defaults that most users want.
+source $VIMRUNTIME/defaults.vim
 
-set nocompatible
-set autoindent
-set shiftwidth=4
-set showmode
-set showmatch
-set showcmd
-set ruler
-set nojoinspaces
-set cpo+=$
-set whichwrap=""
-set modelines=0
-"colorscheme peachpuff
-"set term=linux
-"set number
-set scrolloff=3
-
-" column-width visual indication
-"let &colorcolumn=join(range(81,999),",")
-"highlight ColorColumn ctermbg=235 guibg=#001D2F
-
-filetype plugin indent on
-syntax enable
-hi DiffAdd ctermfg=Gray
-let python_highlight_all = 1
-
-set makeprg=gcc\ -o\ %<\ %
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -60,6 +35,36 @@ else
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
+
+
+" vimrc, R.Wobst, 6.12.2003
+
+set nocompatible
+set autoindent
+set shiftwidth=4
+set showmode
+set showmatch
+set showcmd
+set ruler
+set nojoinspaces
+set cpo+=$
+set whichwrap=""
+set modelines=0
+"colorscheme peachpuff
+"set term=linux
+"set number
+set scrolloff=3
+
+" column-width visual indication
+"let &colorcolumn=join(range(81,999),",")
+"highlight ColorColumn ctermbg=235 guibg=#001D2F
+
+filetype plugin indent on
+syntax enable
+hi DiffAdd ctermfg=Gray
+let python_highlight_all = 1
+
+set makeprg=gcc\ -o\ %<\ %
 
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 
